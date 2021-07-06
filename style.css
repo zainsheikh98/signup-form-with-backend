@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: rgb(167, 204, 223);
+}
+
+.header {
+  position: fixed;
+  left: 10vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1000;
+  background: none;
+  width: 50%;
+  height: 90vh;
+  overflow: hidden;
+}
+.form h1 {
+  color: rgb(22, 0, 46);
+  margin-left: 1rem;
+}
+.input_group {
+  margin: 0rem 1rem;
+  position: relative;
+}
+
+.form input {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  color: rgb(34, 129, 177);
+  padding-top: 0px;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.form label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid rgb(22, 0, 46);
+}
+
+.form label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid rgb(34, 129, 177);
+  transform: translateX(-200%);
+  transition: transform 0.3s ease;
+}
+
+.content-name {
+  position: absolute;
+  font-weight: bold;
+  color: rgb(22, 0, 46);
+  font-size: 1rem;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: rgb(34, 129, 177);
+  font-weight: lighter;
+}
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+  transform: translateX(0%);
+}
+
+/*CODE FOR NEON BUTTON*/
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#neon {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: white;
+  background: rgb(22, 0, 46);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 24px;
+  overflow: hidden;
+  transition: 0.2s;
+  border: none;
+  outline: none;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+#neon:hover {
+  color: rgb(22, 0, 46);
+  background: rgb(34, 129, 177);
+  box-shadow: 0 0 10px white, 0 0 10px white, 0 0 10px white;
+  transition-delay: 0.8s;
+  outline: none;
+}
+
+#neon span {
+  position: absolute;
+  display: block;
+}
+
+#neon span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, rgb(167, 204, 223));
+}
+
+#neon:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.7s;
+}
+
+#neon span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(270deg, transparent, rgb(167, 204, 223));
+}
+
+#neon:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.7s;
+  transition-delay: 0.1s;
+}
+
+#neon span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgb(167, 204, 223));
+}
+
+#neon:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.7s;
+  transition-delay: 0.3s;
+}
+
+#neon span:nth-child(4) {
+  top: 100%;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, rgb(167, 204, 223));
+}
+
+#neon:hover span:nth-child(4) {
+  top: -100%;
+  transition: 0.7s;
+  transition-delay: 0.5s;
+}
+
+/* RESPONSIVE DESIGN  */
+@media all and (max-width: 1024px) {
+  body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .form {
+    width: 90%;
+  }
+
+  .header {
+    opacity: 0.3;
+  }
+
+  .input_group {
+    margin: 0rem;
+  }
+
+  .form input {
+    width: 100%;
+  }
+
+  #neon {
+    padding: 1rem;
+    font-size: 20px;
+    width: auto;
+  }
+}

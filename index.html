@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SignUP Form</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img src="assets/signup.jpg" alt="image-signup" />
+    </div>
+    <form class="form" method="POST" name="signup" onsubmit="return validate()">
+      <h1>Sign Up</h1>
+      <div class="input_group">
+        <input
+          id="firstName"
+          required
+          class="name"
+          autocomplete="off"
+          type="text"
+          value=""
+          name="firstName"
+        />
+        <label for="name" class="label-name">
+          <span class="content-name">First Name</span>
+        </label>
+      </div>
+      <div class="input_group">
+        <input
+          id="lastName"
+          required
+          class="name"
+          autocomplete="off"
+          type="text"
+          value=""
+          name="lastName"
+        />
+        <label for="name" class="label-name">
+          <span class="content-name">Last Name</span>
+        </label>
+      </div>
+      <div class="input_group">
+        <input
+          id="email"
+          required
+          class="name"
+          autocomplete="off"
+          type="email"
+          value=""
+          name="email"
+        />
+        <label for="name" class="label-name">
+          <span class="content-name"> Email </span>
+        </label>
+      </div>
+      <div class="input_group">
+        <input
+          id="password"
+          required
+          class="password"
+          autocomplete="off"
+          type="password"
+          value=""
+          name="password"
+        />
+        <label for="name" class="label-name">
+          <span class="content-name"> password </span>
+        </label>
+      </div>
+      <div class="input_group">
+        <input
+          id="confirmPassword"
+          required
+          class="password"
+          autocomplete="off"
+          type="password"
+          value=""
+          name="confirmPassword"
+        />
+        <label for="password" class="label-name">
+          <span class="content-name">Confirm Password </span>
+        </label>
+      </div>
+      <div class="button">
+        <button id="neon" type="submit">
+          <span> </span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Sign up
+        </button>
+      </div>
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
